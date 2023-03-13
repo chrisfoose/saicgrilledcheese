@@ -1,3 +1,6 @@
+//Christopher Foose
+//Make images draggable.  Create checklist clear functionality. 
+
 const draggables = document.querySelectorAll('.draggable')
 const containers  =  document.querySelectorAll('.container')
 

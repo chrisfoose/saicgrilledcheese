@@ -92,9 +92,9 @@ images.forEach((image) => {
   });
 });
 
-const correctOrder = ['step1', 'step2', 'step3', 'step4', 'step5', 'step6'];
-const checkboxes = document.querySelectorAll('.checkbox');
+const correctOrder = ['<img src="./images/01a_pan_off.png" class="draggable" draggable="true" height="300" width="300">', '<img src="./images/01b_pan_on.png" class="draggable" draggable="true" height="300" width="300">', '<img src="./images/02_butter_bread.png" class="draggable" draggable="true" height="300" width="300">',  '<img src="./images/03a_bread_in_pan.png" class="draggable" draggable="true" height="300" width="300">', '<img src="./images/04_buttered_bread_on_top.png" class="draggable" draggable="true" height="300" width="300">', '<img src="./images/05_flip.png" class="draggable" draggable="true" height="300" width="300">'];
 
+const checkboxes = document.querySelectorAll('.checkbox');
 // Attempting to update order and checkboxes
 
 picture.addEventListener('drop', (e) => {
@@ -111,59 +111,16 @@ picture.addEventListener('drop', (e) => {
       return picture.getAttribute('data-step');
     }
     });
- 
 
   })
 
-  var currentOrder = Array.from(document.querySelectorAll("img")).map((el)=>el.src);
-  var targetOrder = currentOrder.sort(); // sort alphabetically
 
-// Now I start copying and pasting from ChatGPT
+//   // add drop event lister
+// function checkBoxes() {
+//   document.getElementsByClassName(.image-container.drop);
+//     if (correctOrder) == document.getElementsByClassName {
+//         document.getElementsByClassName('.cbox' checked = true) {
+//         }
 
-  const images = document.querySelectorAll('img');
-images.forEach(image => {
-  image.addEventListener('dragend', checkOrder);
-});
-
-function checkOrder() {
-  const images = document.querySelectorAll('img');
-  let previousPosition = -1;
-  let inOrder = true;
-  for (let i = 0; i < images.length; i++) {
-    const currentPosition = images[i].getBoundingClientRect().left;
-    if (previousPosition > currentPosition) {
-      inOrder = false;
-      break;
-    }
-    previousPosition = currentPosition;
-  }
-  if (inOrder) {
-    updateCheckboxes(images);
-  }
-}
-
-function updateCheckboxes(images) {
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach((checkbox, index) => {
-    const imageName = images[index].getAttribute('src');
-    checkbox.checked = imageName.includes(`step${index + 1}`);
-  });
-}
-
-function checkOrder() {
-  const images = document.querySelectorAll('img');
-  let previousPosition = -1;
-  let inOrder = true;
-  for (let i = 0; i < images.length; i++) {
-    const currentPosition = images[i].getBoundingClientRect().left;
-    if (previousPosition > currentPosition) {
-      inOrder = false;
-      break;
-    }
-    previousPosition = currentPosition;
-  }
-  if (inOrder) {
-    updateCheckboxes(images);
-  }
-}
-
+//     }
+// }
